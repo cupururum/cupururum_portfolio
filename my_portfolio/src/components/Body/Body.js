@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Button from '../Content/Button';
 
 const styles = theme => ({
     root: {
       flexGrow: 1,
       marginTop: 100,
+      color: 'rgb(24, 32, 51, .5)'
     },
     paper: {
       padding: theme.spacing.unit * 2,
@@ -44,11 +46,12 @@ function Body(props) {
             <Grid item lg={3}  xs={1}/>
             
             <Grid item lg={2} xs={4}>
-              <div id='leftAngle' className={classes.customPaperLeftTop}/>
+              <div id='leftAngle' className={classes.customPaperLeftTop}/> 
             </Grid>
             <Grid item lg={2} xs={2}/>
             <Grid item lg={2} xs={4}>
-              <div id='rightAngle' className={classes.customPaperRightTop}/>  
+              <div id='rightAngle' className={classes.customPaperRightTop}/> 
+              
             </Grid>
             <Grid item lg={3} xs={1}/>
     

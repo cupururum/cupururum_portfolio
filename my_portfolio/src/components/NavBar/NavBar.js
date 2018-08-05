@@ -1,40 +1,57 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Grid from '@material-ui/core/Grid';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
 
 const styles = {
     root: {
-      background: 'rgb(24, 32, 51, .5)',
-      flexGrow: 1,
-      color: '#ED7630', 
-    },
-    menuButton: {
-      marginLeft: -18,
-      marginRight: 10,
-    },
+      marginTop: 30
+      },
+    tabsIndicator: {
+      backgroundColor: 'rgba(24, 32, 51, .8)',
+    }
   };
- 
-function NavAppBar(props) {
-    const { classes } = props;
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" className={classes.root}>
-          <Toolbar variant="dense">
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="title" color="inherit">
-              Meet Valeriya
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
+
+  class NavAppBar extends React.Component {
+    state = {
+      value: 0,
+    };
+  
+    handleChange = (event, value) => {
+      this.setState({ value });
+    };
+  
+    render() {
+      const { classes } = this.props;
+  
+      return (
+        <Grid container   
+          className={classes.root}>
+          <Grid item  xs={12}>
+            <Grid container   
+            direction="row"
+            justify="center"
+            alignItems="center" 
+            spacing={24}>
+          <Tabs
+            classes={{ indicator: classes.tabsIndicator }}
+            value={this.state.value}
+            onChange={this.handleChange}
+            //indicatorColor="primary"
+            //textColor="inherit"
+            centered
+          >
+            <Tab label="About" />
+            <Tab label="Projects" />
+          </Tabs>
+          </Grid>
+        </Grid>
+      </Grid>
+      );
+    }
   }
   
   NavAppBar.propTypes = {
@@ -42,3 +59,32 @@ function NavAppBar(props) {
   };
   
   export default withStyles(styles)(NavAppBar);
+ 
+// function NavAppBar(props) {
+//     const { classes } = props;
+//     return (
+      
+//       <Grid container   
+//           className={classes.root}>
+//           <Grid item  xs={12}>
+//             <Grid container   
+//             direction="row"
+//             justify="center"
+//             alignItems="center" 
+//             spacing={24}>
+              
+//                   <Button> About </Button>
+//                   <Button> Projects </Button>
+//                   <Button> Contact </Button> 
+               
+//               </Grid>
+//           </Grid>
+//       </Grid>
+//     );
+//   }
+  
+//   NavAppBar.propTypes = {
+//     classes: PropTypes.object.isRequired,
+//   };
+  
+//   export default withStyles(styles)(NavAppBar);
