@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import githubLogo from '../../icons/github_logo.png'
-import linkedInLogo from '../../icons/linkedin_logo.png'
+import Midpoint from './Midpoint'
+import Flashcards from './Flashcards'
+import FlyNews from './FlyNews'
 
 
 const styles = theme => ({
@@ -28,27 +29,22 @@ const styles = theme => ({
     },
   });
 
-function About(props) {
+function Projects(props) {
     const { classes } = props;
   
     return (
         <div className = {classes.root}> 
             <Typography variant="headline" gutterBottom>
-                Valeriya Romashchenko. <br/>
-                Web-Developer. Scientist. <br/>
-                <a href='https://github.com/cupururum' target="_blank">
-                    <img style={{marginRight: 10}} src={githubLogo} alt='githubLogo'/>
-                </a>
-                <a href='https://www.linkedin.com/in/cupururum/' target="_blank">
-                    <img src={linkedInLogo} alt='linkedinLogo'/>
-                </a>
+              <Midpoint /><br/>
+              <Flashcards /> <br/>
+              <FlyNews /> <br/>
             </Typography>
         </div>
     )
 }
 
-About.propTypes = {
+Projects.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-  export default withStyles(styles)(About);
+  export default withStyles(styles)(Projects);
