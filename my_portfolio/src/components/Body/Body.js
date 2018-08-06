@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+
 import Grid from '@material-ui/core/Grid';
 import Button from '../Content/Button';
 
@@ -11,25 +11,28 @@ const styles = theme => ({
       marginTop: 100,
       color: 'rgb(24, 32, 51, .5)'
     },
-    paper: {
-      padding: theme.spacing.unit * 2,
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-      background: 'rgb(24, 32, 51)',
-      boxShadow: '0 3px 5px 2px rgba(237, 117, 48, .3)',
-    },
-    customPaper: {
-      boxShadow: ' 3px 5px 2px rgba(24, 32, 51, .3)'
-    },
-    customPaperRightTop: {
-      boxShadow: ' 3px -5px 2px rgba(194, 193, 189, .3)'
-    },
-    customPaperLeftTop: {
+    angle: {
+      width: 0,
+      height: 0,
+      padding: theme.spacing.unit,
+          [theme.breakpoints.down('xs')]: {
+            borderTop: '100px solid',
+            borderRight: '100px solid transparent',
+          },
+          [theme.breakpoints.up('sm')]: {
+            borderTop: '200px solid rgb(165, 192, 206)',
+            borderRight: '200px solid transparent',
+          },
+          [theme.breakpoints.up('md')]: {
+            borderTop: '300px solid rgb(165, 192, 206)',
+            borderRight: '300px solid transparent',
+          },
+          [theme.breakpoints.up('lg')]: {
+            borderTop: '400px solid rgb(165, 192, 206)',
+            borderRight: '400px solid transparent',
+          },
       boxShadow: ' -3px -5px 2px rgba(172, 141, 95, .3)'
     },
-    customPaperLeftBottom: {
-      boxShadow: ' -3px 5px 2px rgba(165, 192, 206, .3)'
-    }
     
   });
 
@@ -46,11 +49,11 @@ function Body(props) {
             <Grid item lg={3}  xs={1}/>
             
             <Grid item lg={2} xs={4}>
-              <div id='leftAngle' className={classes.customPaperLeftTop}/> 
+              <div id='leftAngle' className={classes.angle} style={{padding: '0px', borderTopColor: 'rgb(165, 192, 206)'}}/> 
             </Grid>
             <Grid item lg={2} xs={2}/>
             <Grid item lg={2} xs={4}>
-              <div id='rightAngle' className={classes.customPaperRightTop}/> 
+              <div id='rightAngle' className={classes.angle} style={{padding: '0px', transform: 'rotate(90deg)', borderTopColor: 'rgb(194, 193, 189)'}} /> 
               
             </Grid>
             <Grid item lg={3} xs={1}/>
@@ -60,11 +63,11 @@ function Body(props) {
             <Grid item lg={3}   xs={1} />
            
             <Grid item lg={2}  xs={4}>
-              <div id='leftBottomAngle' className={classes.customPaperLeftBottom}/>
+                <div className={classes.angle} style={{padding: '0px', transform: 'rotate(-90deg)', borderTopColor: 'rgb(172, 141, 95)'}} />
             </Grid>
             <Grid item lg={2}  xs={2}/>
             <Grid item lg={2}  xs={4}>
-              <div id='rightBottomAngle' className={classes.customPaper}/>  
+                <div className={classes.angle} style={{padding: '0px', transform: 'rotate(180deg)', borderTopColor: 'rgb(24, 32, 51)'}}/>  
             </Grid>
             <Grid item lg={3}  xs={1} />
          

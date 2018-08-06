@@ -6,36 +6,39 @@ body {
 }
 
 
-div#leftAngle {
-  width: 0;
-	height: 0;
-	border-top: 400px solid rgb(172, 141, 95);
-  border-right: 400px solid transparent;
+/* div#leftAngle {
+  width: 100%;
+	height: 100%;
+	border-top:  solid rgb(172, 141, 95);
+  border-right:  solid transparent;
   
-}
+} */
 
-div#rightAngle {
+/* div#rightAngle {
   width: 0;
 	height: 0;
 	border-top: 400px solid rgb(194, 193, 189);
-	border-left: 400px solid transparent;
-
-}
-
-div#leftBottomAngle {
-    width: 0;
-    height: 0;
-    border-bottom: 400px solid rgb(165, 192, 206);
-    border-right: 400px solid transparent;
-  }
-
-div#rightBottomAngle {
-  width: 0;
-  height: 0;
-  border-bottom: 400px solid rgb(24, 32, 51);
   border-left: 400px solid transparent;
-}
+  display: flex
+
+} */
+
+/* div#leftBottomAngle {
+    width: 100%;
+    height: 100%;
+    border-bottom: solid rgb(165, 192, 206);
+    border-right: solid transparent;
+    box-shadow: -3px 5px 2px rgba(165, 192, 206, .3)
+  } */
+
+/* div#rightBottomAngle {
+  width: 100%;
+  height: 100%;
+  border-bottom: solid rgb(24, 32, 51);
+  border-left: solid transparent;
+  display: flex;
+} */
 
 h1#h1_about {
-  
+
 }
